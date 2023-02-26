@@ -27,9 +27,9 @@ function drawCardsAPI(cardNum, suit) {
         //create partial deck of clubs
         var clubsUrl = deckURL + clubsDeckID + '/draw/?count=' + cardNum;
         //fill clubs deck
-        fetch('https://www.deckofcardsapi.com/api/deck/4m4xrszvu5ex/return/')
+        fetch('https://www.deckofcardsapi.com/api/deck/' + clubsDeckID + '/return/')
             //shuffle clubs cards
-            .then(fetch('https://www.deckofcardsapi.com/api/deck/4m4xrszvu5ex/shuffle/?cards=AC,2C,3C,4C,5C,6C,7C,8C,9C,0C,JC,QC,KC')
+            .then(fetch('https://www.deckofcardsapi.com/api/deck/'+ clubsDeckID + '/shuffle/?cards=AC,2C,3C,4C,5C,6C,7C,8C,9C,0C,JC,QC,KC')
                 .then(fetch(clubsUrl)
                     .then(response => response.json())
                     .then(clubsHand => {
