@@ -1,5 +1,6 @@
 //============================== SECTION 1 ==============================
 //universal variables
+
 var exerName;
 var exerInstructions;
 var deckURL = 'https://www.deckofcardsapi.com/api/deck/'
@@ -22,6 +23,7 @@ function drawCardsAPI(cardNum, suit, newD) {
     if (suit === "Clubs") {
 
         //fill clubs deck
+
         fetch('https://www.deckofcardsapi.com/api/deck/' + newD + '/return/')
             //shuffle clubs cards
             .then(fetch('https://www.deckofcardsapi.com/api/deck/' + newD + '/shuffle/?cards=AC,2C,3C,4C,5C,6C,7C,8C,9C,0C,JC,QC,KC')
@@ -43,6 +45,7 @@ function drawCardsAPI(cardNum, suit, newD) {
                         .catch(error => console.log('error', error))
                 }))
             .catch(error => console.log('error', error));
+
     }
 
     if (suit === "Diamonds") {
